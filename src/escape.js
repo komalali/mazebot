@@ -6,9 +6,7 @@ function step(maze, direction) {
         `
         Step: ${direction}. 
         Current position: ${maze.current}.
-        Current solution: ${maze.solution}.
-        Path: ${JSON.stringify(maze.path)}.
-        Map: ${maze.printMap()}`,
+        Path: ${JSON.stringify(maze.path)}.`,
     );
 }
 
