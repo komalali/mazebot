@@ -8,7 +8,7 @@ function escape(maze) {
     let direction = 'N';
     let steps = 0;
     let index = 0;
-    while (!maze.solved() && steps <= 100) {
+    while (!maze.solved() && steps <= 10000) {
         try {
             const newDirection = directionFlow[direction][index];
             maze.step(newDirection);
