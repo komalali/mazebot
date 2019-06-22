@@ -1,6 +1,6 @@
-const mazebot = require('./src/mazebot');
-const escape = require('./src/escape');
-const log = require('./src/log');
+const mazebot = require('./mazebot');
+const escape = require('./escape');
+const log = require('./log');
 
 (async () => {
     try {
