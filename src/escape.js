@@ -12,22 +12,26 @@ function step(maze, direction) {
 
 function escape(maze) {
     const directionFlow = {
-        E: 'S',
-        S: 'W',
-        W: 'N',
-        N: 'E',
+        N: ['E', 'N', 'W', 'S'],
+        E: ['S', 'E', 'N', 'W'],
+        S: ['W', 'S', 'E', 'N'],
+        W: ['N', 'W', 'S', 'E'],
     };
-    let direction = 'E';
+    let direction = 'N';
     let steps = 0;
-    while (maze.solved !== true && steps <= 10) {
+    let index = 0;
+    while (!maze.solved() && steps <= 100) {
         try {
-            step(maze, direction);
+            const newDirection = directionFlow[direction][index];
+            step(maze, newDirection);
+            direction = newDirection;
             steps += 1;
+            index = 0;
         } catch (err) {
-            direction = directionFlow[direction];
+            index += 1
         }
     }
-    return maze.solution;
+    return maze.solution();
 }
 
 module.exports = escape;

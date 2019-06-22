@@ -2,7 +2,7 @@ function Maze({ map, start, end }) {
     this.current = start;
     this.path = [start];
     this.map = map;
-    this.solution = [];
+    this.solution = '';
     this.size = map.length;
     this.solved = false;
 
@@ -10,6 +10,14 @@ function Maze({ map, start, end }) {
         const rowStringified = this.map.map(row => `${row.join('')}|`);
         const mapString = rowStringified.join('\n\t|');
         return `\n\t|${mapString}`;
+    };
+
+    const solved = () => {
+        return this.solved;
+    };
+
+    const solution = () => {
+        return this.solution;
     };
 
     const step = (direction) => {
@@ -46,11 +54,11 @@ function Maze({ map, start, end }) {
                     this.solved = true;
                 }
 
-                newMap[yValue][xValue] = newCell === 'A' ? 'A' : '.';
+                newMap[yValue][xValue] = ['A', 'B'].includes(newCell) ? newCell : '.';
                 this.map = newMap;
                 this.path.push(newPosition);
                 this.current = newPosition;
-                this.solution.push(direction);
+                this.solution += direction;
                 break;
             default:
                 throw new Error('Invalid direction');
@@ -61,10 +69,9 @@ function Maze({ map, start, end }) {
         current: this.current,
         path: this.path,
         size: this.size,
-        solution: this.solution,
-        solved: this.solved,
-        map: this.map,
         printMap,
+        solved,
+        solution,
         step,
     };
 }
