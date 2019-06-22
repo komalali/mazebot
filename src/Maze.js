@@ -8,8 +8,8 @@ function Maze({ map, start, end }) {
 
     function printMap() {
         const rowStringified = this.map.map(row => row.join(''));
-        const mapString = rowStringified.join('\n');
-        return `\n${mapString}`;
+        const mapString = rowStringified.join('\n\t');
+        return `\n\t${mapString}`;
     }
 
     function step(direction) {
@@ -36,16 +36,17 @@ function Maze({ map, start, end }) {
                 }
 
                 const newPosition = [xValue, yValue];
+                const newMap = [...this.map];
+                const newCell = newMap[yValue][xValue];
 
-                if (this.map[yValue][xValue] === 'X') {
+                if (newCell === 'X') {
                     throw new Error('You crashed into a wall');
                 }
-                if (this.map[yValue][xValue] === 'B') {
+                if (newCell === 'B') {
                     this.solved = true;
                 }
 
-                const newMap = [...this.map];
-                newMap[yValue][xValue] = '.';
+                newMap[yValue][xValue] = newCell === 'A' ? 'A' : '.';
                 this.map = newMap;
                 this.path.push(newPosition);
                 this.current = newPosition;
@@ -61,6 +62,7 @@ function Maze({ map, start, end }) {
         path: this.path,
         size: this.size,
         solution: this.solution,
+        solved: this.solved,
         map: this.map,
         printMap,
         step,
