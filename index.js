@@ -6,7 +6,8 @@ const log = require('./src/log');
     try {
         const maze = await mazebot.random();
         const solution = escape(maze);
-        console.log(solution);
+        console.log('Solution', solution);
+        console.log(maze.printMap());
     } catch (err) {
         log.error(err);
     }

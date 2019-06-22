@@ -7,9 +7,9 @@ function Maze({ map, start, end }) {
     this.solved = false;
 
     const printMap = () => {
-        const rowStringified = this.map.map(row => row.join(''));
-        const mapString = rowStringified.join('\n\t');
-        return `\n\t${mapString}`;
+        const rowStringified = this.map.map(row => `${row.join('')}|`);
+        const mapString = rowStringified.join('\n\t|');
+        return `\n\t|${mapString}`;
     };
 
     const step = (direction) => {
