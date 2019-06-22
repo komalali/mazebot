@@ -1,10 +1,14 @@
-function Maze({ map, start, end }) {
+function Maze({ map, start, url }) {
     this.current = start;
     this.path = [start];
     this.map = map;
     this.solution = '';
     this.size = map.length;
     this.solved = false;
+
+    const current = () => {
+        return this.current;
+    };
 
     const printMap = () => {
         const rowStringified = this.map.map(row => `${row.join('')}|`);
@@ -66,13 +70,14 @@ function Maze({ map, start, end }) {
     };
 
     return {
-        current: this.current,
         path: this.path,
         size: this.size,
+        current,
         printMap,
         solved,
         solution,
         step,
+        url,
     };
 }
 

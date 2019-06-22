@@ -1,15 +1,3 @@
-const log = require('./log');
-
-function step(maze, direction) {
-    maze.step(direction);
-    log.info(
-        `
-        Step: ${direction}. 
-        Current position: ${maze.current}.
-        Path: ${JSON.stringify(maze.path)}.`,
-    );
-}
-
 function escape(maze) {
     const directionFlow = {
         N: ['E', 'N', 'W', 'S'],
@@ -23,7 +11,7 @@ function escape(maze) {
     while (!maze.solved() && steps <= 100) {
         try {
             const newDirection = directionFlow[direction][index];
-            step(maze, newDirection);
+            maze.step(newDirection);
             direction = newDirection;
             steps += 1;
             index = 0;
