@@ -31,7 +31,18 @@ const Row = ({ row }) => (
 
 const Grid = ({ grid }) => {
     return (
-        <div>
+        <div
+            style={{
+                width: 410,
+                height: 410,
+                background: colors.prussianBlue,
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'center',
+                alignItems: 'center',
+                borderRadius: 5,
+            }}
+        >
             {grid.map(row => (
                 <Row row={row} />
             ))}

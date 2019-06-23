@@ -1,4 +1,5 @@
 import React from 'react';
+import colors from '../colors';
 
 const outerStyle = {
     width: 40,
@@ -6,6 +7,7 @@ const outerStyle = {
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
+    outline: `1px solid ${colors.prussianBlue}`,
 };
 
 const Block = ({ color }) => (

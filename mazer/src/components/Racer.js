@@ -8,6 +8,7 @@ const outerStyle = {
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
+    outline: `1px solid ${colors.prussianBlue}`,
 };
 
 const innerStyle = {
