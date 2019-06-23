@@ -3,5 +3,5 @@ export default {
     metallicSeaweed: '#08728B',
     paleAqua: '#BFD7EA',
     pastelRed: '#FF5A5F',
-    fireEngineRed: '#C81D25'
-}
+    fireEngineRed: '#C81D25',
+};

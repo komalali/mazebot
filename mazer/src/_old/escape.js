@@ -16,7 +16,7 @@ function escape(maze) {
             steps += 1;
             index = 0;
         } catch (err) {
-            index += 1
+            index += 1;
         }
     }
     return maze.solution();

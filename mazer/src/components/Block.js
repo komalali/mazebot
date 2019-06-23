@@ -5,11 +5,11 @@ const outerStyle = {
     height: 40,
     display: 'flex',
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
 };
 
 const Block = ({ color }) => (
-    <div style={{ ...outerStyle, background: color }}/>
+    <div style={{ ...outerStyle, background: color }} />
 );
 
 export default Block;

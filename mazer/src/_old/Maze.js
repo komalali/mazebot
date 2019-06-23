@@ -24,7 +24,7 @@ function Maze({ map, start, url }) {
         return this.solution;
     };
 
-    const step = (direction) => {
+    const step = direction => {
         const directionMap = {
             E: [1, 0],
             S: [0, 1],
@@ -58,7 +58,9 @@ function Maze({ map, start, url }) {
                     this.solved = true;
                 }
 
-                newMap[yValue][xValue] = ['A', 'B'].includes(newCell) ? newCell : '.';
+                newMap[yValue][xValue] = ['A', 'B'].includes(newCell)
+                    ? newCell
+                    : '.';
                 this.map = newMap;
                 this.path.push(newPosition);
                 this.current = newPosition;
