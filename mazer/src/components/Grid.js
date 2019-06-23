@@ -29,7 +29,7 @@ const Row = ({ row }) => (
     </div>
 );
 
-const Maze = ({ grid }) => {
+const Grid = ({ grid }) => {
     return (
         <div>
             {grid.map(row => (
@@ -39,4 +39,4 @@ const Maze = ({ grid }) => {
     );
 };
 
-export default Maze;
+export default Grid;

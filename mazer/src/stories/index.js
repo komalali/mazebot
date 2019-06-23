@@ -7,7 +7,7 @@ import { linkTo } from '@storybook/addon-links';
 import { Button, Welcome } from '@storybook/react/demo';
 import Racer from '../components/Racer';
 import Block from '../components/Block';
-import Maze from '../components/Maze';
+import Grid from '../components/Grid';
 import colors from '../colors';
 import mazeData from '../mock.json';
 
@@ -30,4 +30,4 @@ storiesOf('Button', module)
 storiesOf('Maze', module)
     .add('racer', () => <Racer />)
     .add('wall', () => <Block color={colors.metallicSeaweed} />)
-    .add('maze', () => <Maze grid={mazeData.map} />);
+    .add('grid', () => <Grid grid={mazeData.map} />);
