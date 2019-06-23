@@ -1,0 +1,22 @@
+{
+  "name":"Maze #249 (10x10)",
+  "mazePath":"/mazebot/mazes/fWX71qB59qs41kQ8_z2GwDWfikA3ntYZpilxEcJgRQM",
+  "startingPosition":[0,1],
+  "endingPosition":[5,5],
+  "message":"When you have figured out the solution, post it back to this url in JSON format. See the exampleSolution for more information.",
+  "exampleSolution": {
+    "directions":"ENWNNENWNNS"
+  },
+  "map": [
+    [" "," ","X"," "," "," ","X"," "," "," "],
+    [".","A"," "," "," "," "," "," ","X"," "],
+    [" ","X","X","X","X","X","X"," ","X"," "],
+    [" "," "," "," "," "," ","X"," ","X"," "],
+    [" ","X","X","X","X","X","X"," ","X"," "],
+    ["X"," "," "," "," ","B"," ","X"," "," "],
+    [" ","X"," ","X","X","X","X","X"," ","X"],
+    [" "," "," ","X"," "," "," "," "," ","X"],
+    [" ","X","X","X"," ","X"," ","X","X","X"],
+    [" "," "," "," "," "," ","X","X","X","X"]
+  ]
+}
